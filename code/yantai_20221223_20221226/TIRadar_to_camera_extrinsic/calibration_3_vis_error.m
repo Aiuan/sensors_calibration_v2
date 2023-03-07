@@ -1,9 +1,9 @@
 %% ŒÛ≤Ó÷±∑ΩÕº
 clear all;  close all; clc;
 
-camera = 'IRayCamera';
+% camera = 'IRayCamera';
 % camera = 'LeopardCamera0';
-% camera = 'LeopardCamera1';
+camera = 'LeopardCamera1';
 
 res_path = fullfile('./', strcat('res_', camera, '.mat'));
 load(res_path);

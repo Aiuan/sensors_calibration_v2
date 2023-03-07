@@ -29,7 +29,12 @@ for i = 1:length(calib_folders)
         end
 
         % .json
-        if ~isempty(regexp(items(j).name, '.json$', 'match'))
+        if ~isempty(regexp(items(j).name, '_intrinsic.json$', 'match'))
+            src = fullfile(items(j).folder, items(j).name);
+            dst = fullfile(output_folder, items(j).name);
+            copyfile(src, dst);
+        end
+        if ~isempty(regexp(items(j).name, '_extrinsic.json$', 'match'))
             src = fullfile(items(j).folder, items(j).name);
             dst = fullfile(output_folder, items(j).name);
             copyfile(src, dst);

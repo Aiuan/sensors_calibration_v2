@@ -1,9 +1,9 @@
 %% 可视化检查
 clear all;  close all; clc;
 
-% camera = 'IRayCamera';
+camera = 'IRayCamera';
 % camera = 'LeopardCamera0';
-camera = 'LeopardCamera1';
+% camera = 'LeopardCamera1';
 
 camera_instrinsic = load(fullfile('../camera_intrinsic', strcat(camera, '.mat')));
 camera_instrinsic = camera_instrinsic.cameraParams;

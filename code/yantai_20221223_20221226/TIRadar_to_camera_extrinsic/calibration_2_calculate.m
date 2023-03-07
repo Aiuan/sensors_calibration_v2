@@ -14,9 +14,9 @@
 clearvars;close all;clc;
 addpath('./3rdpart');
 
-camera = 'IRayCamera';
+% camera = 'IRayCamera';
 % camera = 'LeopardCamera0';
-% camera = 'LeopardCamera1';
+camera = 'LeopardCamera1';
 
 res_path = fullfile('./', strcat('res_', camera, '.mat'));
 
@@ -32,7 +32,7 @@ xk=[-pi/2;0;0;0;0;0];
 % 构建外参矩阵B
 Rx=[1,0,0;0,cos(x(1)),sin(x(1));0,-sin(x(1)),cos(x(1))];
 Ry=[cos(x(2)),0,-sin(x(2));0,1,0;sin(x(2)),0,cos(x(2))];
-Rz=[cos(x(3)),-sin(x(3)),0;sin(x(3)),cos(x(3)),0;0,0,1];
+Rz=[cos(x(3)),sin(x(3)),0;-sin(x(3)),cos(x(3)),0;0,0,1];
 B=[Rx*Ry*Rz,[x(4);x(5);x(6)]];
 
 % 内参矩阵
